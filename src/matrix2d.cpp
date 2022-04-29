@@ -22,10 +22,11 @@ namespace assignment {
     Matrix2x2 res = IdentityMatrix;  // единичная матрица
 
     while (power != 0) {
-
-      // Напишите здесь свой код ...
+      if (power % 2 == 1) {
+        return matrix_multiply(matrix_power(matrix, power - 1), matrix);
+      }
+      return matrix_multiply(matrix_power(matrix, power/2), matrix_power(matrix, power/2));
     }
-
     return res;
   }
 
